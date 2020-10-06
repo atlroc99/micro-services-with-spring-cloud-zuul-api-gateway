@@ -1,0 +1,19 @@
+
+STEP 1: Add required dependencies:
+    - artifact ids:
+    - spring-cloud-starter-netflix-eureka-client
+    - spring-cloud-starter-netflix-zuul
+
+
+STEP2: Enable the zuul proxy
+    - In the main class: @EnableZuulProxy
+
+    spring.application.name=zuul-api-gateway-server
+    server.port=8765
+
+    #Registering zuul proxy server to eureka server as a eurka client
+    eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka
+
+STEP 3: Enable Zuul on the client and test
+    - to enable zuul on the client so that all the cliet request goes thru the zuul
+      and we can also add a filter: pre, post, error
