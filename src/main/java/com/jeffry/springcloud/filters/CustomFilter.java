@@ -41,7 +41,7 @@ public class CustomFilter extends ZuulFilter {
         StringBuilder sb = new StringBuilder();
         sb.append(httpMethod + " ")
                 .append(" | ContextPath: " + contextPath)
-                .append(" | RequestURI:" + requestURI )
+                .append(" | RequestURI:" + requestURI)
                 .append(" | RequestURL: " + requestURL);
         logger.info(sb.toString());
         return null;
